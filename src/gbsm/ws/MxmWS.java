@@ -1,8 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/*******************************************************************************
+ * Copyright (c) Kursat Kutlu Aydemir. All rights reserved.
+ * 
+ * This file can be obtained and modified free of charge, but can not be distributed commercially.
+ * 
+ * Contact with owner at kursatkutlu@live.com
+ ******************************************************************************/
 package gbsm.ws;
 
 import javax.jws.WebService;
