@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+
+  <display-name>gbsm</display-name>
+
+ 	<filter>
+		<filter-name>AuthorizeFilter</filter-name>
+		<filter-class>com.gizit.filters.Auth</filter-class>
+		<!-- init-param are going to be here -->
+		
+		<init-param>
+			<param-name>login-url-path</param-name>
+			<param-value>/login</param-value>
+		</init-param>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>AuthorizeFilter</filter-name>
+		<url-pattern>/admin.jsp</url-pattern>
+		<url-pattern>/index.jsp</url-pattern>
+		<url-pattern>/ServiceViewer.jsp</url-pattern>
+		<url-pattern>/kpi.jsp</url-pattern>
+		<url-pattern>/kpioverall.jsp</url-pattern>
+		<url-pattern>/ReportViewer.jsp</url-pattern>
+		<url-pattern>/login.jsp</url-pattern>
+		<url-pattern>/invalidLogin.jsp</url-pattern>
+		<url-pattern>/WEB-INF/*</url-pattern>
+		<url-pattern>/META-INF/*</url-pattern>
+		<url-pattern>/login</url-pattern>
+	</filter-mapping>
+	
+	<!-- constraint access to conf directory -->
+	<security-constraint>
+	  <web-resource-collection>
+	    <web-resource-name >precluded methods</web-resource-name>
+	    <url-pattern >/conf/*</url-pattern>
+	  </web-resource-collection>
+	  <auth-constraint/>
+	</security-constraint>
+	
+	<resource-ref>
+	        <description>DB Connection</description>
+	        <res-ref-name>connpool</res-ref-name>
+	        <res-type>javax.sql.DataSource</res-type>
+	        <res-auth>Container</res-auth>
+	 </resource-ref>
+	 
+	 <listener>  
+	    <listener-class>
+	        com.gizit.listeners.DBContextListener
+	    </listener-class>
+	</listener>  
+
+	<error-page>
+	   <error-code>500</error-code>
+	   <location>/Error.jsp</location>
+	</error-page>
+	<error-page>
+	   <error-code>404</error-code>
+	   <location>/Error.jsp</location>
+	</error-page>
+    
+</web-app>

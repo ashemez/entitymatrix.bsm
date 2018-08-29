@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+
+
+<Resource name="connpool" auth="Container" type="javax.sql.DataSource"
+            maxActive="10" maxIdle="30" maxWait="10000"
+            username="postgres" password="7890Okmn" driverClassName="org.postgresql.Driver"
+            url="jdbc:postgresql://smdb.cqrjmsgtawd7.us-west-2.rds.amazonaws.com:5432/smdb"
+            minimumIdle="3" maximumPoolSize="10"
+            poolPreparedStatements="true" maxOpenPreparedStatements="-1" />
+
+<!-- 
+<Resource name="connpool" 
+            auth="Container" 
+            factory="com.zaxxer.hikari.HikariJNDIFactory"
+            singleton="true"
+            type="javax.sql.DataSource" 
+            driverClassName="org.postgresql.Driver"
+            jdbcUrl="jdbc:postgresql://localhost:5432/smdb" 
+            username="postgres" 
+            password="7890Okmn" 
+            minimumIdle="3" maximumPoolSize="10" connectionTimeout="300000" maxLifetime="1800000"
+  />
+ -->
+ 
+<!-- 
+<Resource name="connpool" auth="Container"
+        factory="com.zaxxer.hikari.HikariJNDIFactory"
+        type="javax.sql.DataSource"
+        minimumIdle="5" 
+        maximumPoolSize="10"
+        driverClassName="org.postgresql.Driver"
+        jdbcUrl="jdbc:postgresql://smdb.cqrjmsgtawd7.us-west-2.rds.amazonaws.com:5432/smdb" 
+        connectionTimeout="300000"
+        dataSource.user="smdbadmin"
+        dataSource.password="7890Okmn"
+        dataSource.url="jdbc:postgresql://smdb.cqrjmsgtawd7.us-west-2.rds.amazonaws.com:5432/smdb"
+        />
+ -->
+</Context>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+            
+    
+    <wb-module deploy-name="gbsm">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/WebContent/resource/labels"/>
+        <dependent-module archiveName="gbsm_lib.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/gbsm_lib/gbsm_lib">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+                        
+        
+        <property name="context-root" value="gbsm"/>
+                        
+        
+        <property name="java-output-path" value="/gbsm/build/classes"/>
+                    
+    
+    </wb-module>
+        
+
+</project-modules>
